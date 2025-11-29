@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hunter x Hunter</title>
+
+
+
+    <style>
+
+    
+
+        body {
+
+             margin: 0;
+
+             padding: 0;
+
+             font-family: Arial, sans-serif;
+
+             background: #eef3ff;
+
+             color: #333;
+
+        }
+
+
+
+        .container {
+
+            max-width: 750px;
+
+             margin: auto;
+
+            padding: 25px;
+
+        }
+
+
+
+        h1 {
+
+            background: #88aaff;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 18px;
+
+             border-radius: 10px;
+
+             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+
+        }
+
+
+
+        .section {
+
+            background: white;
+
+             margin-top: 25px;
+
+            padding: 20px;
+
+            border-radius: 10px;
+
+             box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+
+            text-align: center;
+
+        }
+
+
+
+        img {
+
+            width: 100%;
+
+            max-width: 350px;
+
+            border-radius: 10px;
+
+            box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+
+            transition: 0.3s;
+
+              margin-bottom: 15px;
+
+        }
+
+
+
+        img:hover {
+
+            transform: scale(1.03);
+
+        }
+
+
+
+        .character-card {
+
+            background: #f7f9ff;
+
+            margin: 15px 0;
+
+            padding: 15px;
+
+            border-radius: 10px;
+
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+        }
+
+
+
+        .character-card:hover {
+
+            transform: translateY(-3px);
+
+        }
+
+
+
+        .hidden {
+
+            display: none;
+
+        }
+
+
+
+        input {
+
+             padding: 8px ;
+
+             border-radius: 6px ;
+
+            border: 1px solid #88aaff;
+
+            margin-right: 8px;
+
+        }
+
+
+
+        button, a {
+
+            padding: 10px 18px;
+
+            border-radius: 6px;
+
+             border: none;
+
+             cursor: pointer;
+
+               margin-top: 10px;
+
+            margin-right: 5px;
+
+            background: #4d6fcf;
+
+            color: white;
+
+            text-decoration: none;
+
+            transition: 0.3s;
+
+        }
+
+
+
+        button:hover, a:hover {
+
+            background: #3655a3;
+
+        }
+
+    </style>
+
+    
+
+</head>
+
+
+
+<body>
+
+    <div class="container">
+
+        <h1>Hunter x Hunter</h1>
+
+
+
+        <div class="section">
+
+             <img id="mainImage" src="https://upload.wikimedia.org/wikipedia/en/e/e0/HunterxHunterprotagonists.png" alt="Hunter x Hunter main characters">
+
+             <p>Follow Gon Freecss on his journey to become a Hunter and find his father. Experience adventure, friendship, and Nen powers!</p>
+
+            <button onclick="changeImage()">Change image</button>
+
+        </div>
+
+
+
+        <div class="section">
+
+            <h2>Main characters</h2>
+
+            <div class="character-card" onclick="toggleInfo(this)">
+
+                <h3>Gon freecss</h3>
+
+                <p class="desc">A determined booy searching for his father.</p>
+
+            </div>
+
+            <div class="character-card" onclick="toggleInfo(this)">
+
+                <h3>Killua Zoldyck</h3>
+
+                <p class="desc">A skilled assassin and Gon's best friend.</p>
+
+            </div>
+
+            <div class="character-card" onclick="toggleInfo(this)">
+
+                <h3>Kurapikca</h3>
+
+                <p class="desc">Seeks revenge on the Phantom Troupe for his clan.</p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="section">
+
+            <h2>Create your nen Ability</h2>
+
+            <input type="text" id="abilityInput" placeholder="Enter ability name">
+
+            <button onclick="createAbility()">Create Ability</button>
+
+            <div id="abilityOutput"></div>
+
+        </div>
+
+
+
+        <a href="index.html">Back to Home</a>
+
+    </div>
+
+
+
+    <script>
+
+        function toggleInfo(card) {
+
+            const desc = card.querySelector('.desc');
+
+            desc.classList.toggle('hidden');
+
+        }
+
+
+
+        const images = [
+
+            " https://upload.wikimedia.org/wikipedia/en/e/e0/HunterxHunterprotagonists.png",
+
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyOgDhWSqzCjAPpwodqyg6gL9jWSKcPcSLxE-LHe2HM7VHo1AOcV6ykwldNZLKPLB3BKZKl8DpUAxZQY9zoQpYBJBhOF2FTrH1E2HLXA&s=10",
+
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq2v_9__en97dDZZxKGpd_Isx-Acyb4IqvwG2ULh61Bw&s=10"
+
+        ];
+
+        let index = 0;
+
+        function changeImage() {
+
+             index = (index + 1) % images.length;
+
+             document.getElementById("mainImage").src = images[index];
+
+        }
+
+
+
+        function createAbility() {
+
+             const input = document.getElementById("abilityInput").value.trim();
+
+             const output = document.getElementById("abilityOutput");
+
+             if (!input) {
+
+                output.innerHTML = "<p style='color:red;'>Enter an ability name!</p>";
+
+                return;
+
+            }
+
+              const types = ["Enhancement", "Transmutation", "Conjuration", "Manipulation", "Emission", "Specialization"];
+
+            const type = types[Math.floor(Math.random() * types.length)];
+
+            const power = Math.floor(Math.random() * 100) + 1;
+
+            output.innerHTML = `<p><strong>${input}</strong> <br>Type: ${type} <br>Power: ${power}</p>`;
+
+        }
+
+
+
+         console.log("Hunter x Hunter page");
+
+    </script>
+
+    
+
+</body>
+
+
+
+
+
+</html>
+

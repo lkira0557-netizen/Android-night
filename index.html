@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Anime World - Home</title>
+
+<style>
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            margin: 0;
+
+           padding: 0;
+
+            background: #e9f0ff;
+
+            color: #333;
+
+        }
+
+
+
+        .container {
+
+            max-width: 750px;
+
+          margin: auto;
+
+            padding: 25px;
+
+            text-align: center ;
+
+        }
+
+
+
+        h1 {
+
+            background: #88aaff;
+
+            color: white;
+
+            padding: 20px;
+
+            border-radius: 10px;
+
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+
+        }
+
+
+
+        .section {
+
+                background: white;
+
+                margin-top: 30px;
+
+                padding: 25px;
+
+                 border-radius: 10px;
+
+                box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+
+        }
+
+
+
+        .anime-card {
+
+            margin-top: 20px;
+
+            padding: 15px;
+
+            background: #f7f9ff;
+
+            border-radius: 10px;
+
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+        }
+
+
+
+        .anime-card img {
+
+            width: 100%;
+
+            max-width: 250px;
+
+             border-radius: 10px;
+
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+
+        }
+
+
+
+        a {
+
+            display: inline-block;
+
+            margin-top: 20px;
+
+            padding: 12px 22px;
+
+             background: #88aaff;
+
+            color: white;
+
+            border-radius: 7px;
+
+            text-decoration: none;
+
+            transition: 0.3s;
+
+        }
+
+
+
+        a:hover {
+
+            background: #4d6fcf;
+
+        }
+
+
+
+        button {
+
+            margin-top: 20px;
+
+            padding: 10px 18px;
+
+            background: #4d6fcf;
+
+            color: white;
+
+            border-radius: 6px;
+
+            border: none;
+
+            transition: 0.3s;
+
+            cursor: pointer;
+
+        }
+
+
+
+        button:hover {
+
+       
+
+            background: #3655a3;
+
+       
+
+        }
+
+    </style>
+
+    
+
+    
+
+  
+
+</head>
+
+
+
+<body>
+
+
+
+    <div class="container">
+
+        <h1>Anime world</h1>
+
+
+
+        <div class="section">
+
+            <p>Welcome! Explore amazing anime content.. Click below to visit the Hunter x hunter page.</p>
+
+            <a href="hunter.html">Go to Hunter x Hunter</a>
+
+
+
+            <button onclick="showMsg()">Click Me</button>
+
+            <p id="msg"></p>
+
+        </div>
+
+
+
+        <div class="section">
+
+            <h2>Popular animes</h2>
+
+
+
+            <div class="anime-card">
+
+                <h3>Demon slayer</h3>
+
+                <img src="https://m.media-amazon.com/images/M/MV5BMWU1OGEwNmQtNGM3MS00YTYyLThmYmMtN2FjYzQzNzNmNTE0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg">
+
+                <p>⭐ Rating: 9/10</p>
+
+            </div>
+
+
+
+            <div class="anime-card">
+
+                <h3>Jujutsu Kaaisen</h3>
+
+                <img src="https://imgc.allpostersimages.com/img/posters/trends-international-jujutsu-kaisen-season-2-hidden-inventory-key-art_u-L-FAG2LF0.jpg">
+
+                <p>⭐ Rating: 9.2/10</p>
+
+            </div>
+
+
+
+            <div class="anime-card">
+
+                <h3>Attack on titan</h3>
+
+                <img src="https://m.media-amazon.com/images/M/MV5BMTcwMzNhYmEtOTVjNi00NDY1LTk2M2UtMzdiNDM5YzFiMDlhXkEyXkFqcGc@._V1_.jpg">
+
+                <p>⭐ Rating: 9.5/10</p>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+
+
+    <script>
+
+        function showMsg() {
+
+            document.getElementById("msg").textContent = ":Hope you enjoy exploring anime!";
+
+        }
+
+
+
+        document.querySelector("h1").style.letterSpacing = "1px";
+
+
+
+        console.log("Home page loaded with anime list.");
+
+    </script>
+
+</body>
+
+</html>
